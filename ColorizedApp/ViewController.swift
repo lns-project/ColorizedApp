@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     
     // MARK: Methods
 
-    @IBAction func firstSliderAction(_ sender: Any) {
+    @IBAction func sliderAction(_ sender: Any) {
         firstColorValue.text = String(format: "%0.2f", firstColorSlider.value)
         secondColorValue.text = String(format: "%0.2f", secondColorSlider.value)
         thirdColorValue.text = String(format: "%0.2f", thirdColorSlider.value)
