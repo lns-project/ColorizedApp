@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SetColorViewController.swift
 //  ColorizedApp
 //
 //  Created by Динара Шарафутдинова on 05.01.2023.
@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: ViewController
 
-class ViewController: UIViewController {
+class SetColorViewController: UIViewController {
 
     @IBOutlet var mixedColorView: UIView!
     
@@ -21,23 +21,29 @@ class ViewController: UIViewController {
     @IBOutlet var secondColorValue: UILabel!
     @IBOutlet var thirdColorValue: UILabel!
     
+    var delegate: SetColorViewControllerDelegate!
+    var mixedColor: UIColor!
+    
     // MARK: viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mixedColorView.layer.cornerRadius = 10
+        mixedColorView.backgroundColor = mixedColor
         
-        setupSlider(firstColorSlider, color: .red, value: firstColorSlider.value)
-        setupSlider(secondColorSlider, color: .blue, value: secondColorSlider.value)
-        setupSlider(thirdColorSlider, color: .green, value: thirdColorSlider.value)
+        let colorComponents = CIColor(color: mixedColor)
+
+        setupSlider(firstColorSlider, color: .red, value: Float(colorComponents.red), label: firstColorValue)
+        setupSlider(secondColorSlider, color: .green, value: Float(colorComponents.green), label: secondColorValue)
+        setupSlider(thirdColorSlider, color: .blue, value: Float(colorComponents.blue), label: thirdColorValue)
         
-        setViewColor()
     }
     
     // MARK: Methods
 
     @IBAction func sliderAction() {
+
         textColorForSlider(firstColorSlider, label: firstColorValue)
         textColorForSlider(secondColorSlider, label: secondColorValue)
         textColorForSlider(thirdColorSlider, label: thirdColorValue)
@@ -45,11 +51,17 @@ class ViewController: UIViewController {
         setViewColor()
     }
     
+    @IBAction func doneButtonPressed() {
+        delegate.setColor(mixedColorView.backgroundColor ?? .white)
+        dismiss(animated: true)
+    }
+    
     // MARK: - Private methods
     
-    private func setupSlider(_ slider: UISlider, color: UIColor, value: Float) {
+    private func setupSlider(_ slider: UISlider, color: UIColor, value: Float, label: UILabel) {
         slider.value = value
         slider.minimumTrackTintColor = color
+        label.text = String(format: "%0.2f", slider.value)
     }
     
     private func setViewColor() {
