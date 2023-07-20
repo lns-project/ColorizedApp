@@ -34,9 +34,21 @@ class SetColorViewController: UIViewController {
         
         let colorComponents = CIColor(color: mixedColor)
 
-        setupSlider(firstColorSlider, color: .red, value: Float(colorComponents.red), label: firstColorValue)
-        setupSlider(secondColorSlider, color: .green, value: Float(colorComponents.green), label: secondColorValue)
-        setupSlider(thirdColorSlider, color: .blue, value: Float(colorComponents.blue), label: thirdColorValue)
+        setupSlider(firstColorSlider,
+                    color: .red,
+                    value: Float(colorComponents.red),
+                    label: firstColorValue
+        )
+        setupSlider(secondColorSlider,
+                    color: .green,
+                    value: Float(colorComponents.green),
+                    label: secondColorValue
+        )
+        setupSlider(thirdColorSlider,
+                    color: .blue,
+                    value: Float(colorComponents.blue),
+                    label: thirdColorValue
+        )
         
     }
     

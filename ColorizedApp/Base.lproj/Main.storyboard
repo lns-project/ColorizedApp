@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MMe-qP-rPn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CfE-DN-RJa">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -15,9 +15,14 @@
                     <view key="view" contentMode="scaleToFill" id="uHZ-34-EfG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aY-M8-so0">
-                                <rect key="frame" x="326" y="59" width="51" height="34"/>
+                        <viewLayoutGuide key="safeArea" id="3bh-oZ-9kO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="O7c-Bq-Oan">
+                        <barButtonItem key="rightBarButtonItem" id="9Md-HF-3lP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="0aY-M8-so0">
+                                <rect key="frame" x="326" y="103" width="51" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system"/>
@@ -25,19 +30,12 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="4XJ-IA-k8J"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="3bh-oZ-9kO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="0aY-M8-so0" firstAttribute="top" secondItem="3bh-oZ-9kO" secondAttribute="top" id="DiM-ba-YDW"/>
-                            <constraint firstItem="0aY-M8-so0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3bh-oZ-9kO" secondAttribute="leading" constant="253" id="UpR-rt-ghr"/>
-                            <constraint firstItem="3bh-oZ-9kO" firstAttribute="trailing" secondItem="0aY-M8-so0" secondAttribute="trailing" constant="16" id="jES-Kf-N3m"/>
-                        </constraints>
-                    </view>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5WU-ss-h3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-800" y="3"/>
+            <point key="canvasLocation" x="125.95419847328243" y="2.8169014084507045"/>
         </scene>
         <!--Set Color View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -188,7 +186,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-27.536231884057973" y="3.3482142857142856"/>
+            <point key="canvasLocation" x="898.47328244274809" y="2.8169014084507045"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sar-Of-iWx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CfE-DN-RJa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G3r-Zf-a7d">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MMe-qP-rPn" kind="relationship" relationship="rootViewController" id="ZkD-u0-4pz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jf3-cB-PWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-800.76335877862596" y="2.8169014084507045"/>
         </scene>
     </scenes>
     <resources>

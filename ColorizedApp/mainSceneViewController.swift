@@ -11,7 +11,7 @@ protocol SetColorViewControllerDelegate {
     func setColor(_ color: UIColor)
 }
 
-class MainSceneViewController: UIViewController {
+final class MainSceneViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let colorVC = segue.destination as? SetColorViewController else { return }
         colorVC.delegate = self
